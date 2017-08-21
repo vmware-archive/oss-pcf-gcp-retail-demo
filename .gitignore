@@ -1,0 +1,38 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+*VCAP_SERVICES*
+image-resizing-service*
+dataflow-server.log
+twitter/manifest.yml
+inventory_match/text_index
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+.mvn
+
+### Vim ###
+.*.swp
+
+### Python ###
+*.pyc
+*.zip
+*.log

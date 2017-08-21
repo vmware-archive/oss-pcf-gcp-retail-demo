@@ -1,0 +1,13 @@
+Flask
+gunicorn
+scipy
+# tensorflow
+# Found list of .whl files here: http://tflearn.org/installation/
+# My issue is documented: https://github.com/tensorflow/tensorflow/issues/5336
+h5py
+https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.0-cp27-none-linux_x86_64.whl
+keras
+Pillow
+google-cloud-language
+google-cloud-vision
+google-cloud-storage

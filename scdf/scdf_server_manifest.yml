@@ -1,0 +1,47 @@
+# 
+# Copyright (c) 2017-Present Pivotal Software, Inc. All Rights Reserved.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#    http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+---
+applications:
+- name: dataflow-server
+  host: dataflow-server
+  memory: 1G
+  disk_quota: 4G
+  timeout: 180
+  instances: 1
+  path: ./spring-cloud-dataflow-server-cloudfoundry-1.2.0.BUILD-SNAPSHOT.jar
+  env:
+    SPRING_APPLICATION_NAME: dataflow-server
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_URL: https://api.system.YOUR_PCF_INSTALL.DOMAIN
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_ORG: YOUR_ORG
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SPACE: YOUR_SPACE
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_DOMAIN: apps.YOUR_PCF_INSTALL.DOMAIN
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_SERVICES: mysql
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_USERNAME: YOUR_PCF_USER_NAME
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_PASSWORD: YOUR_PCF_PASSWORD
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_SKIP_SSL_VALIDATION: true # true if using self-signed SSL certificate
+    MAVEN_REMOTE_REPOSITORIES_REPO1_URL: https://repo.spring.io/libs-snapshot
+    SPRING_CLOUD_DATAFLOW_FEATURES_EXPERIMENTAL_TASKSENABLED: true
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_TASK_API_TIMEOUT: 30000
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_STREAM_SERVICES: rabbit
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_STREAM_MEMORY: 1024
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_STREAM_DISK: 2048
+    SPRING_CLOUD_DEPLOYER_CLOUDFOUNDRY_STREAM_INSTANCES: 1
+services: # Each of these is the name of a service instance you create
+- mysql
+- redis
+- rabbit
+

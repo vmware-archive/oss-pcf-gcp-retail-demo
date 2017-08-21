@@ -1,0 +1,194 @@
+{
+  "contributors": null, 
+  "coordinates": null, 
+  "created_at": "Thu Apr 27 14:07:29 +0000 2017", 
+  "date_time": "04/27/17 02:07:33", 
+  "entities": {
+    "hashtags": [], 
+    "media": [
+      {
+        "display_url": "pic.twitter.com/06ShnGnRPc", 
+        "expanded_url": "https://twitter.com/miapisjef/status/857597071192358912/photo/1", 
+        "id": 857597060169834496, 
+        "id_str": "857597060169834496", 
+        "indices": [
+          29, 
+          52
+        ], 
+        "media_url": "http://pbs.twimg.com/media/C-bL-4PXoAA18ju.jpg", 
+        "media_url_https": "https://pbs.twimg.com/media/C-bL-4PXoAA18ju.jpg", 
+        "sizes": {
+          "large": {
+            "h": 2048, 
+            "resize": "fit", 
+            "w": 1536
+          }, 
+          "medium": {
+            "h": 1200, 
+            "resize": "fit", 
+            "w": 900
+          }, 
+          "small": {
+            "h": 680, 
+            "resize": "fit", 
+            "w": 510
+          }, 
+          "thumb": {
+            "h": 150, 
+            "resize": "crop", 
+            "w": 150
+          }
+        }, 
+        "type": "photo", 
+        "url": "https://t.co/06ShnGnRPc", 
+        "vision_labels": [
+          "clothing", 
+          "jacket", 
+          "leather", 
+          "outerwear", 
+          "leather jacket", 
+          "textile", 
+          "blazer", 
+          "material", 
+          "formal wear", 
+          "collar"
+        ]
+      }
+    ], 
+    "symbols": [], 
+    "urls": [], 
+    "user_mentions": []
+  }, 
+  "extended_entities": {
+    "media": [
+      {
+        "display_url": "pic.twitter.com/06ShnGnRPc", 
+        "expanded_url": "https://twitter.com/miapisjef/status/857597071192358912/photo/1", 
+        "id": 857597060169834496, 
+        "id_str": "857597060169834496", 
+        "indices": [
+          29, 
+          52
+        ], 
+        "media_url": "http://pbs.twimg.com/media/C-bL-4PXoAA18ju.jpg", 
+        "media_url_https": "https://pbs.twimg.com/media/C-bL-4PXoAA18ju.jpg", 
+        "sizes": {
+          "large": {
+            "h": 2048, 
+            "resize": "fit", 
+            "w": 1536
+          }, 
+          "medium": {
+            "h": 1200, 
+            "resize": "fit", 
+            "w": 900
+          }, 
+          "small": {
+            "h": 680, 
+            "resize": "fit", 
+            "w": 510
+          }, 
+          "thumb": {
+            "h": 150, 
+            "resize": "crop", 
+            "w": 150
+          }
+        }, 
+        "type": "photo", 
+        "url": "https://t.co/06ShnGnRPc"
+      }
+    ]
+  }, 
+  "favorite_count": 0, 
+  "favorited": false, 
+  "geo": null, 
+  "id": 857597071192358912, 
+  "id_str": "857597071192358912", 
+  "in_reply_to_screen_name": null, 
+  "in_reply_to_status_id": null, 
+  "in_reply_to_status_id_str": null, 
+  "in_reply_to_user_id": null, 
+  "in_reply_to_user_id_str": null, 
+  "in_stock": true, 
+  "is_quote_status": false, 
+  "lang": "en", 
+  "make_offer": true, 
+  "offer_id": "59526fb4-28a4-47da-8b42-a55b0aa36af5", 
+  "offer_items": [
+    {
+      "desc": "Mango Camel Coatigan", 
+      "url": "https://storage.googleapis.com/retail-image/755831-90-Mango_Camel_Coatigan.jpg"
+    }, 
+    {
+      "desc": "Black Tailored Single Breasted Jacket", 
+      "url": "https://storage.googleapis.com/retail-image/134586-40-Black_Tailored_Single_Breasted_Jacket.jpg"
+    }, 
+    {
+      "desc": "Mint Velvet Ruffle Zip Front Shirt", 
+      "url": "https://storage.googleapis.com/retail-image/168202-90-Mint_Velvet_Ruffle_Zip_Front_Shirt.jpg"
+    }, 
+    {
+      "desc": "Abercrombie Fitch Charcoal Twill Parka", 
+      "url": "https://storage.googleapis.com/retail-image/989382-145-Abercrombie_Fitch_Charcoal_Twill_Parka.jpg"
+    }
+  ], 
+  "offer_text": "30% off at BohoChic with code #fashionista", 
+  "place": null, 
+  "possibly_sensitive": false, 
+  "retweet_count": 0, 
+  "retweeted": false, 
+  "sentiment": {
+    "magnitude": 0.8, 
+    "score": 0.4
+  }, 
+  "source": "twitter", 
+  "text": "Lovely -- i must get one :-) https://t.co/06ShnGnRPc", 
+  "truncated": false, 
+  "user": {
+    "contributors_enabled": false, 
+    "created_at": "Tue Mar 14 15:55:28 +0000 2017", 
+    "default_profile": true, 
+    "default_profile_image": true, 
+    "description": "I'm Mia and I love travel, food, and fashion", 
+    "entities": {
+      "description": {
+        "urls": []
+      }
+    }, 
+    "favourites_count": 0, 
+    "follow_request_sent": false, 
+    "followers_count": 2, 
+    "following": false, 
+    "friends_count": 50, 
+    "geo_enabled": false, 
+    "has_extended_profile": true, 
+    "id": 841679179854798848, 
+    "id_str": "841679179854798848", 
+    "is_translation_enabled": false, 
+    "is_translator": false, 
+    "lang": "en", 
+    "listed_count": 0, 
+    "location": "San Francisco, CA", 
+    "name": "Mia Pisjef", 
+    "notifications": false, 
+    "profile_background_color": "F5F8FA", 
+    "profile_background_image_url": null, 
+    "profile_background_image_url_https": null, 
+    "profile_background_tile": false, 
+    "profile_image_url": "http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png", 
+    "profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png", 
+    "profile_link_color": "1DA1F2", 
+    "profile_sidebar_border_color": "C0DEED", 
+    "profile_sidebar_fill_color": "DDEEF6", 
+    "profile_text_color": "333333", 
+    "profile_use_background_image": true, 
+    "protected": false, 
+    "screen_name": "miapisjef", 
+    "statuses_count": 83, 
+    "time_zone": null, 
+    "translator_type": "none", 
+    "url": null, 
+    "utc_offset": null, 
+    "verified": false
+  }
+}

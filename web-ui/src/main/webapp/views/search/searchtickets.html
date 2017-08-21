@@ -1,0 +1,96 @@
+<style> /* set the CSS */
+
+    body { font: 12px Arial;}
+
+    path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+    }
+
+    .axis path,
+    .axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+    }
+
+</style>
+
+<div>
+
+    <div class="row">
+
+        <div class="col-lg-13">
+            <h4 class="page-header">Select Users:
+
+
+
+
+                <select ng-model="selectedUser" ng-options="user as user.name for user in users"></select>
+
+                <button name="LoadData" ng-click="loaddata()"> GetTicketInfo</button>
+            </h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h4 class="page-header" ng-show="showdetails">Ticket Assingment details for <b>{{selectedUser.name}} </b>from <b>{{selectedUser.time_zone}}</b> Time Zone</h4>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row" >
+
+
+
+        <div id="chartContainer">
+        </div>
+
+        <div class="row svg-container">
+
+        </div>
+        <div id="zendeskchartContainer">
+        </div>
+
+        <div class="panel panel-default" ng-show="showdetails">
+            <div class="panel-heading">
+                DataTables Advanced Tables
+            </div>
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                        <tr>
+                            <th>TicketID</th>
+                            <th>CreateTime</th>
+                            <th>UpdateTime</th>
+                            <th>Status</th>
+                            <th>MoreInformation</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="odd gradeX" ng-repeat="ticket in tickets">
+                            <td><a href='https://discuss.zendesk.com/agent/tickets/{{ticket.id}}' target="_blank"> {{ticket.id}} </a></td>
+                            <td>{{formatuidate(ticket.created_at)}}</td>
+                            <td>{{formatuidate(ticket.updated_at)}}</td>
+                            <td class="center">{{ticket.status}}</td>
+                            <td class="center">{{getcustomfields(ticket.custom_fields)}}</td>
+
+
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+             </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- /.row -->
+</div>

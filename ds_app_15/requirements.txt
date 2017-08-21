@@ -1,0 +1,4 @@
+Flask
+gunicorn
+flask-cors
+git+https://github.com/pwdyson/inflect.py#egg=inflect

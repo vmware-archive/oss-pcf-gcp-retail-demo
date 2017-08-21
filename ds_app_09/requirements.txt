@@ -1,0 +1,4 @@
+Flask
+gunicorn
+google-cloud-language
+google-cloud-vision

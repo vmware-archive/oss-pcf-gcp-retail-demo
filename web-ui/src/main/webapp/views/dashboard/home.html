@@ -1,0 +1,129 @@
+
+		<div class="grid">
+			<div class="col">
+				<h3 class="pbl">GCP + PCF retail demo</h3>
+			</div>
+		</div>
+        <!-- /.row -->
+		<div class="grid">
+			<div class="col col-a pbxxl">
+				<h6 class="ptl txt-c">Data</h6>
+				<h3 class="ptl">Incoming tweet</h3>
+				<div class="media ptl">
+					<a class="media-left" href="#" target="_blank">
+						<!-- Twitter icon -->
+						<img alt="Avatar image" class="media-object" src="{{sentimentdata.user.profile_image_url_https}}">
+					</a>
+					<div class="media-body pts">
+						<!-- Twitter username -->
+						<h4>{{sentimentdata.user.name}}</h4>
+						<em>@{{sentimentdata.user.screen_name}}</em>
+					</div>
+				</div>
+				<!-- Tweet text -->
+				<p class="ptxl">
+					{{sentimentdata.text}}
+				</p>
+				<div class="pbl">
+					<!-- Tweet image attachement(s) -->
+					<img alt="Tweet image" class="img-responsive" src="{{media_url}}" />
+				</div>
+				<p class="pbxxl type-sm">
+					<!-- Tweet date and time stamp -->
+					{{sentimentdata.date_time}} <br />
+					<!-- Tweet location -->
+					{{sentimentdata.user.location}}
+				</p>
+			</div>
+			<div class="col col-b pbxxl">
+				<h6 class="ptl txt-c">Information</h6>
+				<h3 class="ptxl">Google Cloud Vision API</h3>
+				<!-- Vision API results -->
+				<p class="man pan ptl">
+					<em>Keywords:</em>
+				</p>
+                <p ng-repeat="vision in vision_labels" class="man pan pbs">
+                	&bull; {{vision}}
+                </p>
+				<h3 class="ptxl">Google Cloud NLP API</h3>
+				<!-- NLP API results -->
+                <p class="man pan pbs">
+					<em>Sentiment:</em><br/>
+                    <img src="{{sentiment_icon_url}}" height="50px" width="50px" />
+                </p>
+                <p class="man pan pbs">
+                    <em>Make offer?</em><br />
+					<strong>{{sentimentdata.make_offer}}</strong>
+                </p>
+			</div>
+			<div class="col col-c pbxxl">
+				<h6 class="ptl txt-c">Knowledge</h6>
+				<h3 class="ptxl">Google Cloud Storage</h3>
+				<!-- User data -->
+				<p class="man phn pvl">
+					<em>Name:</em><br />
+					{{sentimentdata.user.name}}
+				</p>
+				<p class="man pan pbl">
+					<em>twitter username:</em><br />
+					@{{sentimentdata.user.screen_name}}
+				</p>
+				<p class="man pan pbl">
+					<em>Location:</em><br />
+					{{sentimentdata.user.location}}
+				</p>
+				<p class="man pan pbs">
+					<em>Preferences:</em><br />
+	                <p ng-repeat="vision in vision_labels" class="man pan pbs">
+	                	&bull; {{vision}}
+	                </p>
+				</p>
+				<p class="man pan">
+					<em>Last updated:</em><br />
+					{{sentimentdata.date_time}}
+				</p>
+			</div>
+			<div class="col col-d pbxxl">
+				<h6 class="ptl txt-c">Insight</h6>
+				<h3 class="ptxl">Retailer Inventory Match</h3>
+				<div ng-repeat="item in offer_items" class="media ptm">
+					<div class="media-left image-container" >
+                    	<img src="{{item.url}}" class="media-object" style="width: 80px;" />
+					</div>
+					<div class="media-body">
+						<!-- Item name and description #1 -->
+						<p class="media-heading ptm">{{item.desc}}</p>
+					</div>
+                </div>
+				<h3 class="ptxl">Retailer Location Match</h3>
+				<!-- Can be made up and hard-coded -->
+				<p class="man pan pbs">
+					Store #415<br />
+					875 Howard St. <br />
+					San Francisco CA 94103
+				</p>
+			</div>
+			<div class="col col-e pbxxl">
+				<h6 class="ptl txt-c">Action</h6>
+				<h3 class="ptl">Outgoing tweet</h3>
+				<div class="media ptl">
+					<a class="media-left" href="#" target="_blank">
+						<!-- Twitter icon -->
+						<img alt="Boho Chic SF" class="media-object" src="https://pbs.twimg.com/profile_images/841678135791910913/L5ZVeXus_normal.jpg">
+					</a>
+					<div class="media-body pts">
+						<!-- Twitter username -->
+						<h4>Boho Chic</h4>
+						<em>@bohochicsf</em>
+					</div>
+				</div>
+				<!-- Tweet text -->
+				<p class="ptxl">
+					{{offer_text}}
+				</p>
+				<div ng-repeat="item in offer_items" class="pbl">
+					<!-- Tweet image attachements -->
+					<img src="{{item.url}}" class="img-responsive pbl" />
+				</div>
+			</div>
+		</div>
