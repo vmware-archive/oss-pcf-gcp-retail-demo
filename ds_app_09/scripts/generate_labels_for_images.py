@@ -26,7 +26,7 @@ from pcfgcp import PcfGcp
 from google.cloud import language
 from google.cloud import vision
 
-NUM_IMAGES = 400
+NUM_IMAGES = 10
 pg = PcfGcp()
 
 # This is required for using the Vision API
@@ -101,5 +101,4 @@ for img in imgList:
     for label in labels:
       labelSet.add(label.lower())
 print "['" + "', '".join(sorted(labelSet)) + "']"
-
 

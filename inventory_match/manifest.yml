@@ -23,5 +23,5 @@ applications:
   command: python image_matcher.py
   host: image-match
   env:
-    IMAGE_TOC_URL: https://storage.googleapis.com/retail-image/toc.txt
+    IMAGE_TOC_URL: https://storage.googleapis.com/YOUR_BUCKET_NAME/toc.txt
 

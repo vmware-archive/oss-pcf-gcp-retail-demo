@@ -1,4 +1,6 @@
 Flask
 gunicorn
-google-cloud-language
-google-cloud-vision
+grpcio==1.2.0
+google-cloud-language==0.23.1
+google-cloud-vision==0.23.3
+redis

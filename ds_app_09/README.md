@@ -11,6 +11,3 @@
 ## For details on deploying this, running it, see the parent README
 [Parent README](../README.md)
 
-## Notes
-* This relies on our [PcfGcp](https://github.com/pivotal-alliances-immersion/pcf-gcp-python/blob/master/pcfgcp.py) module
-

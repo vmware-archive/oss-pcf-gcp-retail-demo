@@ -22,4 +22,5 @@ applications:
   buildpack: python_buildpack
   command: python ds_app_09.py
   host: ds_app_09
-
+  env:
+    IMAGE_TOC_URL: https://storage.googleapis.com/YOUR_BUCKET_NAME/toc.txt

@@ -1,6 +1,6 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
-*VCAP_SERVICES*
+*VCAP_*
 image-resizing-service*
 dataflow-server.log
 twitter/manifest.yml

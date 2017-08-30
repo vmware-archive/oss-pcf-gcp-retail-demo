@@ -174,7 +174,7 @@ def imageSearch(imagePath, nItems):
   return topImageNames
 
 def productInfoFromFileName(fileName):
-  # Example fileName: "L57817-42-Miss_Selfridge_Polka_Dot_Wrap_Midi_Dress.jpg"
+  # Example fileName: "L57817-42-Polka_Dot_Wrap_Midi_Dress.jpg"
   (sku, price, desc) = fileName.split('-')
   desc = re.sub(r'_', ' ', desc.split('.')[0])
   url = imageBaseUrl + '/' + fileName

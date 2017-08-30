@@ -28,10 +28,17 @@ is to get a few of them running first.
     1. `cd ./image-resizing-service/`
     1. `cf push`
     1. `cd -`
+* The product recommendation is partially based on an image feature based match.  The following describes the requirements:
+    1. A Collection of images of inventory items, in JPEG format
+    1. The file names of these images encode the SKU, price, and description: `SKU-PRICE-THE_FULL_DESCRIPTION.jpg`
+    1. Example image file name: `L57817-42-Polka_Dot_Wrap_Midi_Dress.jpg`
+    1. The entire image collection is housed within a Google Cloud Storage bucket (can be a different one from the bucket created in the next section)
+    1. Within that same bucket, there needs to be a "table of contents" (TOC) file, containing the image names, one per line (with no path)
+
 * Inventory Matcher (used by `ds_app_15`):
     1. `cd ./inventory_match/`
-    1. If you want to use your own image collection, as opposed to ours, edit `./manifest.yml`, replacing the value there for `IMAGE_TOC_URL`
-    1. Create an instance of `google-storage`: `cf create-service google-storage standard storage -c '{ "name": "BUCKET-NAME" }`
+    1. Edit `./manifest.yml`, setting the appropriate value for `IMAGE_TOC_URL` (see above)
+    1. Create an instance of `google-storage`, specifying your `BUCKET_NAME`: `cf create-service google-storage standard storage -c '{ "name": "BUCKET-NAME" }`
     1. Push the app without starting it: `cf push --no-start`
     1. Bind to the storage instance you created: `cf bs image-match storage -c '{"role": "editor"}'`
     1. Set the health check to be processed based during the indexing phase, since the app will not be listening on its port during all that time (could be an hour): `cf set-health-check image-match process`
@@ -39,7 +46,7 @@ is to get a few of them running first.
     1. Tail the logs as it indexes images: `cf logs image-match`
     1. Once that completes, it should print a message, saying it's listening on its port.  Once this happens, run the next step.
     1. Just run a standard `cf push`
-    1. It stores the model as a Zip file in your storage bucket, so future restarts should be quicker.
+    1. It stores the model as a Zip file in your storage bucket, so future restarts will be quicker.
     1. `cd -`
 * Data Science Interrogator App:
     1. `cd ./ds_app_09/`
