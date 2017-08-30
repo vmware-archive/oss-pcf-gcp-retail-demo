@@ -53,8 +53,12 @@ is to get a few of them running first.
     1. Create an instance of GCP ML: `cf cs google-ml-apis default gcp-ml -c '{ "name": "gcp-ml" }'`
     1. Push the app without starting it: `cf push --no-start`
     1. Bind the app to the GCP ML service instance: `cf bs ds_app_09 gcp-ml -c '{ "role": "viewer" }'`
+    1. Create an instance of the Redis service: `cf cs p-redis shared-vm redis` (NOTE: the code will look for `p-redis`)
+    1. Bind this Redis instance to the app: `cf bs ds_app_09 redis`
     1. Start the app: `cf start ds_app_09`. Once it starts, the `urls:` field of the output will contain the value you need in the next step
     1. Create a service based on this app: `cf cups ds_app_09-service -p '{ "uri": "http://ds_app_09.YOUR_PCF_INSTALL.DOMAIN" }'`
+    1. Use the app to bootstrap your `termSet` (see the code): `time curl http://ds_app_09.YOUR_PCF_INSTALL.DOMAIN/genTermSet`
+    1. Similarly, for `labelSet`: `time curl http://ds_app_09.YOUR_PCF_INSTALL.DOMAIN/genLabelSet/400` (The `400` here is just a significant subset of your inventory set; I've been going with a value which is 10% of the total.)  This step takes some time as it hits the GCP Vision API for each image.
     1. `cd -`
 * Data Science Evaluator App:
     1. `cd ./ds_app_15/`
