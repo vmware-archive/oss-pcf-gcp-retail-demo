@@ -20,11 +20,13 @@ from __future__ import division
 import os, re, json, base64
 import urllib2, random
 from flask import (Flask, request, jsonify, Response)
-from pcfgcp import PcfGcp
+
 from google.cloud import language
 from google.cloud import vision
 import redis, pickle
 from collections import defaultdict
+
+from pcfgcp import PcfGcp
 
 DEBUG = False
 LABEL_FRACTION = 0.3  # Min. fraction of image labels in labelSet to trigger an offer TODO: Make tunable

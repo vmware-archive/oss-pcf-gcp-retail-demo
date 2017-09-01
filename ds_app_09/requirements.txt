@@ -3,3 +3,4 @@ gunicorn==19.6.0
 google-cloud-language==0.23.1
 google-cloud-vision==0.23.3
 redis==2.10.6
+git+https://github.com/pivotal-partner-solution-architecture/pcf-gcp-python.git#egg=pcfgcp

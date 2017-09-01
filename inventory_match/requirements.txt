@@ -11,3 +11,4 @@ Pillow
 google-cloud-language
 google-cloud-vision
 google-cloud-storage
+git+https://github.com/pivotal-partner-solution-architecture/pcf-gcp-python.git#egg=pcfgcp
