@@ -58,7 +58,7 @@ termSetRedisKey = redisNS + ':termSet'
 tmpTermSet = redisConn.get(termSetRedisKey)
 if tmpTermSet is not None:
     termSet = pickle.loads(tmpTermSet)
-    print 'termSet: %s' % json.dumps(sorted(termSet))
+print 'termSet: %s' % json.dumps(sorted(termSet))
 
 # Set of labels corresponding with items within our retailer's inventory
 # This set was created using ./scripts/generate_labels_for_images.py
@@ -68,7 +68,7 @@ labelSetRedisKey = redisNS + ':labelSet'
 tmpLabelSet = redisConn.get(labelSetRedisKey)
 if tmpLabelSet is not None:
     labelSet = pickle.loads(tmpLabelSet)
-    print 'labelSet: %s' % json.dumps(sorted(labelSet))
+print 'labelSet: %s' % json.dumps(sorted(labelSet))
 
 
 def logMsg(args):
@@ -193,7 +193,7 @@ if imageTocUrl is None:
 imageBaseUrl = '/'.join(imageTocUrl.split('/')[:-1])
 print 'imageTocUrl: %s, imageBaseUrl: %s' % (imageTocUrl, imageBaseUrl)
 
-# Generate the set of labels and populate labelSet
+# Generate image labels and append them to labelSet
 @app.route('/genLabelSet/<int:n_images>')
 def genLabelSet(n_images):
     global labelSet
@@ -206,8 +206,7 @@ def genLabelSet(n_images):
     print 'Image count: %d' % len(imgList)
     fraction = n_images / len(imgList)
     print 'Fraction: %f' % fraction
-    labelSet = set()
-    # generate() is used to permit incremental output, to avoid timeouts as this long process runs
+    # generate() is used to permit incremental output, to avoid HTTP process timeouts as this long process runs
     def generate():
         for img in imgList:
             if random.random() < fraction:
@@ -219,6 +218,10 @@ def genLabelSet(n_images):
         redisConn.set(labelSetRedisKey, pickle.dumps(labelSet))
     return Response(generate(), mimetype='text/plain')
 
+# Dump the current set of labels
+@app.route('/getLabelSet')
+def getLabelSet():
+    return json.dumps(sorted(labelSet))
 
 # Generate the set of terms from the product descriptions,  populate termSet
 @app.route('/genTermSet')
@@ -235,6 +238,11 @@ def genTermSet():
     termSet = set(wordList)
     redisConn.set(termSetRedisKey, pickle.dumps(termSet))
     return json.dumps(wordList)
+
+# Dump the current set of terms
+@app.route('/getTermSet')
+def getTermSet():
+    return json.dumps(sorted(termSet))
 
 
 if __name__ == '__main__':
