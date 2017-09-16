@@ -15,8 +15,8 @@ Caveat: this version has no _Persistence Service_
     1. Navigate to the [releases page](https://github.com/cloudfoundry/cli/releases) on GitHub
     1. Download and install the appropriate one for your platform
 * [Git client](https://git-scm.com/downloads) installed
-* Using the Git client, clone [this repo](https://github.com/mgoddard-pivotal/pcf-gcp-retail-demo)
-* Change into this newly created directory: `cd ./pcf-gcp-retail-demo`
+* Using the Git client, clone [this repo](https://github.com/pivotal-cf/oss-pcf-gcp-retail-demo.git)
+* Change into this newly created directory: `cd ./oss-pcf-gcp-retail-demo`
 
 ## Deploy some Python apps
 
