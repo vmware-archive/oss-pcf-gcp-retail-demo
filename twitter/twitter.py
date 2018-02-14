@@ -19,8 +19,10 @@
 DEBUG = False # If True, the Flask app is not multi-threaded
 SOURCE_NAME = 'twitter'
 OUR_SCREEN_NAME='bohochicsf' # For *our* Twitter account
+
 POLLING_INTERVAL_SEC = 15
 UPDATE_FOLLOWERS_INTERVAL_SEC = 60
+DT_HEALTH = 5 # Additional interval (see above two values), in seconds, for considering app "unhealthy"
 
 from datetime import datetime
 import os, sys, re, time, urllib2, json
@@ -198,8 +200,7 @@ def health():
   nHealthCalls += 1
   httpCode = 200
   tNow = time.time()
-  # Add a second to the delta T value
-  if (tNow - lastTimelineUpdateT > POLLING_INTERVAL_SEC + 1.0) or (tNow - lastFollowerUpdateT > UPDATE_FOLLOWERS_INTERVAL_SEC + 1.0):
+  if (tNow - lastTimelineUpdateT > POLLING_INTERVAL_SEC + DT_HEALTH) or (tNow - lastFollowerUpdateT > UPDATE_FOLLOWERS_INTERVAL_SEC + DT_HEALTH):
     httpCode = 503
   print '/health returning HTTP %d (called %d times)' % (httpCode, nHealthCalls)
   return "STATUS_OK", httpCode
